@@ -11,6 +11,13 @@ function Header() {
   const history=useHistory()
   const { user } = useContext(Authcontext);
   const {firebase}= useContext(FirebaseContext)
+ const  loginHandle=()=>{
+history.push('/login')
+  }
+const creatHandle=()=>{
+history.push('/create')
+
+}
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
@@ -38,21 +45,32 @@ function Header() {
           <Arrow></Arrow>
         </div>
         <div className="loginPage">
-          <span>{user ? ` Welcome ${user.displayName}` : "Login"}</span>
+          <span>{user ? ` Welcome ${user.displayName}` : <span onClick={loginHandle}>Login</span>}</span>
           <hr />
         </div>
-    
-          {user &&<span onClick={()=>{
+          {user &&<span className="logout" onClick={()=>{
             firebase.auth().signOut()
                  history.push('/login')
           }}>Logout</span>}
-        <div className="sellMenu">
+          {
+            user?
+
+        <div className="sellMenu" onClick={creatHandle}>
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
             <span>SELL</span>
           </div>
         </div>
+        :<div className="sellMenu" onClick={loginHandle}>
+<SellButton></SellButton>
+<div className="sellMenuContent">
+  <SellButtonPlus></SellButtonPlus>
+  <span>SELL</span>
+</div>
+</div>
+
+          }
       </div>
     </div>
   );

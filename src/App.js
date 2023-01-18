@@ -1,13 +1,19 @@
 import React,{useEffect,useContext} from 'react';
-import './App.css';
 import { BrowserRouter as Router,Route} from 'react-router-dom';
 import { Authcontext, FirebaseContext } from './Store/Context';
-/**
- * ?  =====Import Components=====
- */
 import Home from './Pages/Home';
 import Signup from './Pages/Signup'
 import Login from './Pages/Login'
+import Create from './Pages/Create'
+import View from './Pages/ViewPost'
+import './App.css';
+
+import Post from './Store/postContext';
+
+
+/**
+ * ?  =====Import Components=====
+ */
 
 function App() {
 
@@ -22,6 +28,8 @@ firebase.auth().onAuthStateChanged((user)=>{
 
   return (
     <div>
+      
+<Post>
   <Router>
   <Route exact path="/" >
     <Home/>
@@ -32,7 +40,14 @@ firebase.auth().onAuthStateChanged((user)=>{
   <Route path="/login" >
     <Login />
   </Route>
+  <Route path="/create" >
+    <Create />
+  </Route>
+  <Route path="/view" >
+    <View />
+  </Route>
   </Router>
+</Post>
     </div>
   );
 }

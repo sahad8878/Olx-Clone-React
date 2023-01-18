@@ -18,7 +18,9 @@ firebase.auth().signInWithEmailAndPassword(email,password).then(()=>{
 }).catch((error)=>{
   alert(error.message)
   })
-
+  }
+  const signupPage=()=>{
+    history.push('/signup')
   }
   return (
     <div>
@@ -53,7 +55,7 @@ firebase.auth().signInWithEmailAndPassword(email,password).then(()=>{
           <br />
           <button>Login</button>
         </form>
-        <a>Signup</a>
+        <a onClick={signupPage}>Signup</a>
       </div>
     </div>
   );

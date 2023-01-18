@@ -105,15 +105,24 @@
   font-weight: bolder;
   margin-right: 5px;
 }
+.loginPage{
+  cursor: pointer;
 
+}
 .loginPage hr {
   margin: 0;
   background-color: black;
   height: 2px;
 }
-
+.loginPage:hover{
+color:rgba(26, 20, 20, 0.41);
+}
+.button{
+  border: none;
+}
 .loginPage a{
   text-decoration: none;
+
 }
 
 .sellMenu {
@@ -161,4 +170,10 @@
   .sellMenu {
     display: none;
   }
+}
+
+
+.logout{
+  cursor: pointer;
+
 }
