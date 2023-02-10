@@ -55,7 +55,7 @@ export default function Signup() {
             type="text"
             id="fname"
             name="name"
-            {...register("name", { required: true, maxLength: 10 })}
+            {...register("name", { required: true,minLength:5, maxLength: 10 })}
           />
           {errors.name && <p className="errorMsg">Please check the Name</p>}
           <br />
@@ -66,7 +66,7 @@ export default function Signup() {
             type="email"
             id="fname"
             name="email"
-            {...register("email", { required: true, maxLength: 20 })}
+            {...register("email", { required: true,minLength:5, maxLength: 20 })}
           />
           {errors.email && <p className="errorMsg">Please check the Email</p>}
 
@@ -78,7 +78,7 @@ export default function Signup() {
             type="number"
             id="lname"
             name="phone"
-            {...register("phone", { required: true, maxLength: 10 })}
+            {...register("phone", { required: true, minLength:10 })}
           />
           {errors.phone && (
             <p className="errorMsg">Please check the Phone Number</p>

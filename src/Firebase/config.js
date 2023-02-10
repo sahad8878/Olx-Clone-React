@@ -3,7 +3,7 @@ import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/storage'
 
-const firebaseConfig = {
+const firebaseConfig  = {
     apiKey: "AIzaSyCx6K6aV-R63UdeFyVJmxfi6ImYs4Ky7WM",
     authDomain: "olx-react-7392f.firebaseapp.com",
     projectId: "olx-react-7392f",
